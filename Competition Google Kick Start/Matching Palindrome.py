@@ -6,7 +6,7 @@ def test():
     len_p = input()
     P = str(input())
     #   print(P)
-    # Loop through the list `C` and sum its values.
+    # Loop through the lst `C` and sum its values.
     for i in range(len(P)):
         Q = P[-1:-i - 2:-1]
         # print(Q)
