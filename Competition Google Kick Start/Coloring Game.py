@@ -1,5 +1,5 @@
 def test():
-  # Read N integers from the standard input and save them in the list `C`.
+  # Read N integers from the standard input and save them in the lst `C`.
   C = int(input())
   # Compute the value accordint to Tape.
   result = C // 5
