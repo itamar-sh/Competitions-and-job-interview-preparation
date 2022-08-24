@@ -25,3 +25,19 @@ O(1) space, O(n) time
 ### Trick
 use two dummies nodes
 one for nodes smaller than n and one for bigger
+
+## Intersection of two Linked List - 160 - Easy
+### Problem
+Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
+### requirements
+O(m+n) time, O(1) space
+### Trick
+concatenate the two list and traverse on them with 2 pointers: 1 on A+B and one on B+A.
+
+## Palindrome Linked List - 234 - Easy
+### Problem
+Given the head of a singly linked list, return true if it is a palindrome.
+### requirements
+O(n) time, O(1) space, can change the list but return the list unharmed
+### Trick
+reverse the pointers in half of the list.
