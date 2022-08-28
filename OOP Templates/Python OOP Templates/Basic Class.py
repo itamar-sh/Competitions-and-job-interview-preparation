@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Dog:
     # class attribute
     attr1 = "mammal"
@@ -5,10 +8,14 @@ class Dog:
     # Instance attribute
     def __init__(self, name):
         self.name = name
+        self.__private_attr = "cannot be used outside class or in derived class"
+        self._protected_attr = "can be used only in instance of the Dog class not derived class"
+
 
     # Methods
     def speak(self):
         print("My name is {}".format(self.name))
+
 
 
 # Driver code
@@ -35,15 +42,15 @@ class Person:
 
     # __init__ is known as the constructor
     def __init__(self, name, idnumber):
-        self.name = name
+        self._name = name
         self.idnumber = idnumber
 
     def display(self):
-        print(self.name)
+        print(self._name)
         print(self.idnumber)
 
     def details(self):
-        print("My name is {}".format(self.name))
+        print("My name is {}".format(self._name))
         print("IdNumber: {}".format(self.idnumber))
 
 
@@ -58,6 +65,7 @@ class Employee(Person):
 
     def details(self):
         print("Post: {}".format(self.post))
+        print(self._name)
 
 
 # creation of an object variable or an instance
@@ -68,4 +76,11 @@ a = Employee('Rahul', 886012, 200000, "Intern")
 a.display()     # My name is Rahul
                 # IdNumber: 886012
 a.details()     # Post: Intern
+b = Person("aa", 2)
+print(b._name)
+print(a._name)
+
+
+
+
 
