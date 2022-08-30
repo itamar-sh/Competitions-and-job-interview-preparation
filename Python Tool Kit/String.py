@@ -104,3 +104,8 @@ print(mytable)  # {109: 101, 83: 74, 97: 111, 111: None, 100: None, 110: None, 1
 print(txt.translate(mytable))  # G i Joe!
 print(mytable.values())  # dict_values([101, 74, 111, None, None, None, None, None, None])
 
+# sort string
+word = "34543dssdsd34"
+sortedWord = ''.join(sorted(word))  # return str
+print(sortedWord)  # 3334445dddsss
+print(sorted(word))  # ['3', '3', '3', '4', '4', '4', '5', 'd', 'd', 'd', 's', 's', 's']
