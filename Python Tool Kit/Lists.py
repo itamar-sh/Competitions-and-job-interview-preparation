@@ -24,6 +24,9 @@ lst5[2] = 0
 lst5[1:3] = [-1, -1]  # dangerous to insert in slicing more or less than the size of the slice.
 lst6[1:2] = [-1, -1]  # will convert [1, "2", lst3, set()] to [1, -1, -1, lst3, set()] - "2" erased and the other moved
 lst6[1:2] = []  # will convert [1, -1, -1, lst3, set()] to [1, -1, lst3, set()]
+lst_old = [1]
+lst_new = [2,3]
+lst_new[:] = lst_old[:]  # insert all the elements in lst_old to lst_new without changing the pointer itself
 
 # append and insert - adding elements
 lst8 = [1, 2, 3, 4, 5]
