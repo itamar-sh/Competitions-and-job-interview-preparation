@@ -12,7 +12,7 @@ print(f7.read())
 """
 Hello! Welcome to demofile.txt
 This file is for testing purposes.
-Good Luck!
+Good Luck! 
 """
 f8 = open("demofile.txt", "r")
 print(f8.read(5))  # "Hello"
