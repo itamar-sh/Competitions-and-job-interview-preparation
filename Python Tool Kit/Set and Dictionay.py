@@ -26,7 +26,7 @@ s.remove("new item")  # will raise error if element does not exist
 s.discard("new item")  # will not raise error if element does not exist
 s.pop()  # return some element
 # union
-set1 = {"a", "b" , "c"}
+set1 = {"a", "b", "c"}
 set2 = {1, 2, 3}
 set3 = set1.union(set2)
 print(set3)
