@@ -96,6 +96,38 @@ class Vowels:
         return reversed(self.vowels)
 print(list(reversed(Vowels())))  # custom operator: ['u', 'o', 'i', 'e', 'a']
 
+# range(start=0, stop, step=1) - very intuitive, we get an iterator
+print(list(range(4, -1, -1) ))    # [4, 3, 2, 1, 0]
+
+# print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False), many objects, file can be  from: open("..", "w")
+print('a =', 5, '= b', flush=True)  # a = 5 = b        # will immediately print
+
+# pow(number, power, modulus [optional]), (number^power)%modulus
+print(pow(7, 2, 5))  # 4       7^2%5=49%5=4      equal to: (7**2)%5
+print(pow(-2, -2))   # 0.25   (-2)^(-2)=1/((-2)^2)=1/4     equal to (-2)**-2
+
+# max(), min() - syntax 1: max(iterable, *iterables, key, default=ValueError)
+#                          *iterables for more than one iter, key to comparison, default for case of empty iter.
+#              - syntax 2: max(arg1, arg2,args*, key)
+# #                          *args for more than two args, key to comparison.
+print("The largest first value more than one iterables:", max([0,2,3,4],[1,-2],[-2,9,0]))    # [1,-2] because 1 > 0> -2
+print("The longer from more than one iterables:", max([0,2,3,4],[1,-2],[-2,9,0], key=len))    # [0, 2, 3, 4]
+print("The shortest from more than one iterables:", min([0,2,3,4],[1,-2],[-2,9,0], key=len))    # [1, -2]
+square = {2: 4, -3: 9, -1: 1, -2: 4}  # dict
+print("The largest key:", max(square))    # 2
+print("The largest value:", max(square.values()))    # 9
+print("The key with the largest value:", max(square, key=lambda k: square[k]))    # -3
+print(max(("python", "lua", "ruby"), key=len))  # "python"
+print(max("c", "b", "a", "Y", "Z", key=str.lower))  # "Z"
+print("max from args: ", max(2,4,6,7,8,-2))  # 8
+
+
+
+
+
+
+
+
 
 
 
