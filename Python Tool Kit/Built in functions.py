@@ -78,5 +78,15 @@ print(list(map(lambda a, b: a+b, [2,3,4], [3,4])))  # [5,7] # iterate only the m
 map_lst = [1,2,3,4,5]
 print(list(map(lambda a,b,c,d,e : a+b+c+d+e, map_lst, map_lst, map_lst, map_lst, map_lst)))  # [5, 10, 15, 20, 25]
 
-# filter()
+# filter() - gets function and iterable and return iterable of values that return True after from the func.
+letters = ['a', 'b', 'd', 'e', 'i', 'j', 'o']
+def filter_vowels(letter):  # a function that returns True if letter is vowel
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    return True if letter in vowels else False
+print(tuple(filter(filter_vowels, letters)))  # ('a', 'e', 'i', 'o')
+print(list(filter(lambda x: (x%2 == 0), [1, 2, 3, 4, 5, 6, 7])))  # [2, 4, 6]
+
+
+
+
 
