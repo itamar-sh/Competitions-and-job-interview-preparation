@@ -68,5 +68,15 @@ print(list(enumerate(lst)))  # [(0, 'a'), (1, 'b'), (2, 4)]
 print(callable(lambda a: a+1))  # True
 print(callable("aa"))  # False
 
+# map() - gets two arguments - one if function name and the other is iterable. Return iterator.
+print(list(map(lambda a: a+1, [1,2,3,4])))  # [2,3,4,5]
+print(list(map(int, ["1","2","3","4"])))  # [1,2,3,4]
+# map() - gets x+1 arguments when 1 is functions that gets x arguments and return a value.
+print(list(map(lambda a, b: a+b, [2], [3])))  # [5]
+print(list(map(lambda a, b: a+b, [2,3,4], [3,4,5])))  # [5,7,9]
+print(list(map(lambda a, b: a+b, [2,3,4], [3,4])))  # [5,7] # iterate only the min(len(iter1, iter2)
+map_lst = [1,2,3,4,5]
+print(list(map(lambda a,b,c,d,e : a+b+c+d+e, map_lst, map_lst, map_lst, map_lst, map_lst)))  # [5, 10, 15, 20, 25]
 
+# filter()
 
