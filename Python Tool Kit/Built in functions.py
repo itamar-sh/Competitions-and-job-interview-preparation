@@ -86,6 +86,17 @@ def filter_vowels(letter):  # a function that returns True if letter is vowel
 print(tuple(filter(filter_vowels, letters)))  # ('a', 'e', 'i', 'o')
 print(list(filter(lambda x: (x%2 == 0), [1, 2, 3, 4, 5, 6, 7])))  # [2, 4, 6]
 
+# reversed() - gets one sequence_object, not dict or set but tuple or list or range. return reversed iterator.
+seq_tuple = ('P', 'y', 't', 'h', 'o', 'n')
+print(list(reversed(seq_tuple)))  # ['n', 'o', 'h', 't', 'y', 'P']
+print(list(seq_tuple))  # Not in-place: ['P', 'y', 't', 'h', 'o', 'n']
+class Vowels:
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    def __reversed__(self):
+        return reversed(self.vowels)
+print(list(reversed(Vowels())))  # custom operator: ['u', 'o', 'i', 'e', 'a']
+
+
 
 
 
