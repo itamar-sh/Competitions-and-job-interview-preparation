@@ -121,7 +121,16 @@ print(max(("python", "lua", "ruby"), key=len))  # "python"
 print(max("c", "b", "a", "Y", "Z", key=str.lower))  # "Z"
 print("max from args: ", max(2,4,6,7,8,-2))  # 8
 
-
+# vars() - gets one argument - and return dictionary of their properties. The object can be anything with __dict__ attr.
+class Fruit:
+    def __init__(self, apple=5, banana=10):
+        self.apple = apple
+        self.banana = banana
+eat = Fruit()
+# returns __dict__ of the eat object
+print(vars(eat))  # {'apple': 5, 'banana': 10}
+print(vars("Jones"))  # error
+print(vars(list))  # {'__repr__': <slot wrapper '__repr__' of 'list' objects>, '__hash__': None, .....}
 
 
 
