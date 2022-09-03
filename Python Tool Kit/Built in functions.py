@@ -129,8 +129,13 @@ class Fruit:
 eat = Fruit()
 # returns __dict__ of the eat object
 print(vars(eat))  # {'apple': 5, 'banana': 10}
-print(vars("Jones"))  # error
+# print(vars("Jones"))  # error
 print(vars(list))  # {'__repr__': <slot wrapper '__repr__' of 'list' objects>, '__hash__': None, .....}
+
+# sum(iterable, start)
+print(sum([1,2,3,4], -10))  # 0
+print(sum([1,2,3,4]))  # 10
+# print(sum([1,2,3,4], [1,2,3,4]))  # error
 
 
 
