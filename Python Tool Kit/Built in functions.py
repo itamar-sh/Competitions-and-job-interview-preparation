@@ -132,10 +132,17 @@ print(vars(eat))  # {'apple': 5, 'banana': 10}
 # print(vars("Jones"))  # error
 print(vars(list))  # {'__repr__': <slot wrapper '__repr__' of 'list' objects>, '__hash__': None, .....}
 
-# sum(iterable, start)
+# sum(iterable, start) - iterable of numeric type, return sum of every value in the iterable + the start
 print(sum([1,2,3,4], -10))  # 0
 print(sum([1,2,3,4]))  # 10
 # print(sum([1,2,3,4], [1,2,3,4]))  # error
+# print(sum("12"))  # error
+
+# sorted(iterable, key=None, reverse=False) - return the sorted list - without changing the original list.
+participant_list = [  # List elements: (Student's Name, Marks out of 100 , Age)
+    ('Alison', 50, 18), ('Terence', 75, 12), ('David', 75, 20), ('Jimmy', 90, 22), ('John', 45, 12)]
+sorted_list = sorted(participant_list, key=lambda item: (100-item[1], item[2]))  # if item[1] equal then look at item2.
+print(sorted_list)  # [('Jimmy', 90, 22), ('Terence', 75, 12), ('David', 75, 20), ('Alison', 50, 18), ('John', 45, 12)]
 
 
 
