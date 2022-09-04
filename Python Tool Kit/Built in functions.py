@@ -144,6 +144,19 @@ participant_list = [  # List elements: (Student's Name, Marks out of 100 , Age)
 sorted_list = sorted(participant_list, key=lambda item: (100-item[1], item[2]))  # if item[1] equal then look at item2.
 print(sorted_list)  # [('Jimmy', 90, 22), ('Terence', 75, 12), ('David', 75, 20), ('Alison', 50, 18), ('John', 45, 12)]
 
+# round(number, ndigits=0) - return nearest integer to the given number if ndigits is not provided.
+print(round(10))  # 10
+print(round(10.51))  # 11
+print(round(10.49))  # 10
+print(round(10.49))  # 10
+print(round(10.5))  # 11
+print(round(2.665, 2))  # 2.67
+print(round(2.668, 2))  # 2.67
+print(round(2.675, 2))  # 2.67  - 2.675 is transfer to 2.67499999 because floating point is not so precise
+from decimal import Decimal
+print(round(Decimal('2.675'), 2))  # 2.68
+print(round(2.676, 2))  # 2.68
+
 
 
 
