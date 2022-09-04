@@ -157,7 +157,28 @@ from decimal import Decimal
 print(round(Decimal('2.675'), 2))  # 2.68
 print(round(2.676, 2))  # 2.68
 
+# zip(*iterables) - gets some iterables and return iterator of tuples of one elements from each iterable.
+languages = ['Java', 'Python', 'JavaScript']
+versions = [14, 3, 6]
+print(list(zip(languages, versions)))     # Output: [('Java', 14), ('Python', 3), ('JavaScript', 6)]
+numbersList = [1, 2, 3]
+str_list = ['one', 'two']
+numbers_tuple = ('ONE', 'TWO', 'THREE', 'FOUR')
+print(list(zip(numbersList, numbers_tuple)))  # Notice, the size of numbersList and numbers_tuple is different
+# [(1, 'ONE'), (2, 'TWO'), (3, 'THREE')]
+print(list(zip(numbersList, str_list, numbers_tuple)))  # Notice, the size of str_list is only two.
+# [(1, 'one', 'ONE'), (2, 'two', 'TWO')]
 
+# zip(*zippedList) - unzip function
+coordinate = ['x', 'y', 'z']
+value = [3, 4, 5]
+result = list(zip(coordinate, value))
+c, v = zip(*result)
+print(f'c ={c}\t\tv = {v}')
+a1, a2 = zip(*[[1, "one"], [2, "two"], [3, "three"]])
+print(f'a1 ={a1}\t\ta2 = {a2}')  # a1 =(1, 2, 3)		a2 = ('one', 'two', 'three')
+a1, a2 = zip(*[(1, "one"), (2, "two"), (3, "three")])
+print(f'a1 ={a1}\t\ta2 = {a2}')  # a1 =(1, 2, 3)		a2 = ('one', 'two', 'three')
 
 
 
