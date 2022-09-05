@@ -11,7 +11,17 @@ print(isinstance(fooInstance, Foo))  # True
 print(isinstance(fooInstance, (list, tuple)))  # False
 print(isinstance(fooInstance, (list, tuple, Foo)))  # True
 
-# issubclass()
+# issubclass(class, classinfo) - return True if class is from sub type of classinfo even is from inherited class.
+class Polygon:
+    def __init__(polygonType):
+        print('Polygon is a ', polygonType)
+class Triangle(Polygon):
+    def __init__(self):
+        Polygon.__init__('triangle')
+print(issubclass(Triangle, Polygon))  # True
+print(issubclass(Triangle, list))  # False
+print(issubclass(Triangle, (list, Polygon)))  # True - class info can be tuple.
+print(issubclass(Polygon, (list, Polygon)))  # True - Polygon is sub class of himself.
 
 # object()
 
