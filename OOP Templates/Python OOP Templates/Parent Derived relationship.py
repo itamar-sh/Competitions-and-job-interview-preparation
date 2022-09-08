@@ -20,7 +20,7 @@ class Parent:
 class Child(Parent):
     __private_member: int
     def __init__(self):
-        Parent.__init__(self)
+        super().__init__()
 
     @staticmethod
     def static_method1(arg1, arg2):
@@ -31,10 +31,10 @@ class Child(Parent):
 
 c = Child()
 Child.static_member1 = "ab"
-print(c.static_member1)
-print(Child.static_member1)
+print(c.static_member1)  # "ab"
+print(Child.static_member1)  # "ab"
 c.member1 = 5
-print(c.member1)
+print(c.member1)  # "5
 c.method1()
 Child.static_method1(1, 2)
-print(Child.static_member3)
+print(Child.static_member3)  # []
