@@ -45,6 +45,10 @@ class PrintNumber:  # example 2
         self.num += 1
         return self.num
 print(next(iter(PrintNumber(3))))  # 1
+# iter(object, sentinel)  - sentinel is something that if we get to this value then the iterator will stop.
+with open("testfile.txt", "r") as fp:
+    for line in iter(fp.readline, ''):  # we will stop when we get to empty line
+        print(line)
 
 # next(iterator, default)
 # default (optional) - this value is returned if the iterator is exhausted (there is no next item)
