@@ -68,7 +68,7 @@ class OrderTraversal:
                     queue.append(Node(value.right, level + 1))  # from right to left
         return res
 
-    def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
+    def connectWhenFullBunaryTree(self, root: 'Optional[Node]') -> 'Optional[Node]':
         """
         -Populating Next Right Pointers in Each Node - Medium - 116-
         connect each node to his right in the tree. so node.next will bring you to your neighbor.
@@ -83,6 +83,51 @@ class OrderTraversal:
             current.left.next = current.right
             if current.next:
                 current.right.next = current.next.left
-            self.connect(current.left)
-            self.connect(current.right)
+            self.connectWhenFullBunaryTree(current.left)
+            self.connectWhenFullBunaryTree(current.right)
+        return root
+
+    def findNextChild(self, current: 'Node'):
+        """
+        helper for connectWithoutFullBinaryTree.
+        find next node in order.
+        :param current:
+        :return:
+        """
+        if current.left:
+            return current.left
+        elif current.right:
+            return current.right
+        elif current.next:
+            return self.findNextChild(current.next)
+        else:
+            return None
+
+    def connectWithoutFullBinaryTree(self, root: 'Node') -> 'Node':
+        """
+        -Populating Next Right Pointers in Each Node - Medium - 116-
+        connect each node to his right in the tree. so node.next will bring you to your neighbor.
+        NOT full binary tree.
+        :param root:
+        :return:
+        """
+        if not root:
+            return
+        current = root
+        # connect next to each child
+        if current.left:
+            if current.right:
+                current.left.next = current.right
+            elif current.next:
+                current.left.next = self.findNextChild(current.next)
+            else:
+                current.left.next = None
+        if current.right:
+            if current.next:
+                current.right.next = self.findNextChild(current.next)
+            else:
+                current.right.next = None
+        # keep connect down the levels
+        self.connectWithoutFullBinaryTree(current.right)
+        self.connectWithoutFullBinaryTree(current.left)
         return root
