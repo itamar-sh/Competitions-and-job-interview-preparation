@@ -109,3 +109,6 @@ word = "34543dssdsd34"
 sortedWord = ''.join(sorted(word))  # return str
 print(sortedWord)  # 3334445dddsss
 print(sorted(word))  # ['3', '3', '3', '4', '4', '4', '5', 'd', 'd', 'd', 's', 's', 's']
+
+# count(substring, start=...,(Optional) end=...(Optional)) - how many occurrences of substring is a string
+print("34343444444".count("34"))  # 3
