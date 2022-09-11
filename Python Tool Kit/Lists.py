@@ -63,4 +63,7 @@ lst10.reverse()
 lst15 = [1, 2]
 lst15.extend([3, 4, 5])  # [1,2,3,4,5]
 
+# count(item) - count occurrences
+print([1,2,3,4,3,1,12,3,4,3,2].count(2))  # 2
+
 
