@@ -8,6 +8,8 @@ class TreeNode:
 
 
 class OrderTraversal:
+    # there is better way, called: Morris Traversal - with O(1) extra space.
+    # this solution have O(n) extra space because it's get inside recursion O(n) times and this takes O(n) new args.
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
             return []
