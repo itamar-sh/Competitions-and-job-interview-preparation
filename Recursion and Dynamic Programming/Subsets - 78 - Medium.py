@@ -1,7 +1,9 @@
+from typing import List
+
+
 class Solution:
     def addOne(self, lst):
         for i in range(len(lst)):
-            # print(lst)
             if lst[i] == 1:
                 lst[i] = 0
             elif lst[i] == 0:
